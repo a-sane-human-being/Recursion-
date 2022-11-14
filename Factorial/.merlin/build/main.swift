@@ -1,0 +1,77 @@
+import Foundation
+
+// ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩
+// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
+let n = 3
+// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
+// ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧
+
+
+// Add your code below:
+
+func factorialPrint(input:Int) {
+    if input <= 0 {
+        print("Calculating factorial(\(input))...")
+    } 
+    else if input > 1 {
+        print("Calculating factorial(\(input))...")
+        if input - 1 == 1 {
+            print("Calculating factorial(1)...")
+        }
+        factorialPrint(input:input - 1)
+    }
+}
+
+func factorialCalc(base:Int, num1: Int, num2: Int, runCunt: Int) {
+    if base == 1 {
+        print("Calculating factorial(1)...")
+        print("Terminal case, returning 1.")
+        print("The final result is: 1.")
+    } else {
+        if base <= 1 {
+            print("Terminal case, returning 1.")
+            print("The final result is: 1.")
+        } 
+        if runCunt == base && base > 1 {
+            print("Terminal case, returning 1.")
+        }
+        if runCunt != 1 && runCunt > 1 {
+            print("Non-terminal case, returning \(num1 * num2).")
+            factorialCalc(base: n, num1: num1 * num2, num2: num2 + 1, runCunt: runCunt - 1)
+        }
+        if runCunt == 1 {
+            print("The final result is: \(num1).")
+        }
+        /*if base < 1 {
+          print("Terminal case, returning 1.")
+          print("The final result is: 1.")
+          } else if base == 1 {
+          print("Calculating factorial(\(base))...")
+          print("Terminal case, returning 1.")
+          print("The final result is: 1.")
+          } else if base > 1 {
+          print("non")
+          }
+         */
+    }
+}
+
+
+func factorial(n: Int) -> Int {
+    print("Calculating factorial(\(n))...")
+    if n <= 1 {
+        print("Terminal case, returning 1.")
+        return 1
+    } else {
+        let red = n * factorial(n: n - 1)
+        print("Non-terminal case, returning \(red).")
+        return red
+    }
+}
+
+
+
+print("The final result is: \(factorial(n:n)).")
+
+//factorialPrint(input:n)
+//factorialCalc(base: n, num1: 1, num2: 2, runCunt: n)
